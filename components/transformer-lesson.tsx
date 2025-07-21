@@ -171,7 +171,7 @@ export default function TransformerLesson() {
             <CardHeader>
               <CardTitle className="flex items-center">
                 <Eye className="h-5 w-5 mr-2" />
-                "Attention Is All You Need" - Paper Overview
+                &quot;Attention Is All You Need&quot; - Paper Overview
               </CardTitle>
               <CardDescription>Vaswani et al., 2017 - The paper that changed AI forever</CardDescription>
             </CardHeader>
@@ -317,9 +317,9 @@ export default function TransformerLesson() {
                         <span className="text-white font-bold text-2xl">Q</span>
                       </div>
                       <h4 className="font-semibold text-blue-900 mb-2">Query</h4>
-                      <p className="text-blue-800 text-sm mb-4">"What information am I looking for?"</p>
+                      <p className="text-blue-800 text-sm mb-4">&quot;What information am I looking for?&quot;</p>
                       <div className="bg-white p-3 rounded-lg">
-                        <p className="text-xs text-blue-700">In business context: "Explain DCF modeling"</p>
+                        <p className="text-xs text-blue-700">In business context: &quot;Explain DCF modeling&quot;</p>
                       </div>
                     </CardContent>
                   </Card>
@@ -330,7 +330,7 @@ export default function TransformerLesson() {
                         <span className="text-white font-bold text-2xl">K</span>
                       </div>
                       <h4 className="font-semibold text-green-900 mb-2">Key</h4>
-                      <p className="text-green-800 text-sm mb-4">"What information is available?"</p>
+                      <p className="text-green-800 text-sm mb-4">&quot;What information is available?&quot;</p>
                       <div className="bg-white p-3 rounded-lg">
                         <p className="text-xs text-green-700">Available topics: Finance, Strategy, Leadership</p>
                       </div>
@@ -343,7 +343,7 @@ export default function TransformerLesson() {
                         <span className="text-white font-bold text-2xl">V</span>
                       </div>
                       <h4 className="font-semibold text-purple-900 mb-2">Value</h4>
-                      <p className="text-purple-800 text-sm mb-4">"The actual information content"</p>
+                      <p className="text-purple-800 text-sm mb-4">&quot;The actual information content&quot;</p>
                       <div className="bg-white p-3 rounded-lg">
                         <p className="text-xs text-purple-700">Detailed DCF explanation and examples</p>
                       </div>
@@ -408,7 +408,7 @@ export default function TransformerLesson() {
                 <Card className="border-2 border-dashed border-blue-300">
                   <CardContent className="p-6">
                     <div className="text-center mb-4">
-                      <h4 className="font-semibold">Business Query: "How to value a startup?"</h4>
+                      <h4 className="font-semibold">Business Query: &quot;How to value a startup?&quot;</h4>
                     </div>
                     <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                       <div className="space-y-2">
@@ -434,9 +434,9 @@ export default function TransformerLesson() {
                       <div className="bg-blue-50 p-4 rounded-lg">
                         <h5 className="font-medium text-sm mb-2">Attention Output</h5>
                         <p className="text-xs text-blue-800">
-                          "For startup valuation, focus primarily on DCF modeling (85% weight) combined with comparable
+                          &quot;For startup valuation, focus primarily on DCF modeling (85% weight) combined with comparable
                           analysis (70% weight). Consider risk factors and market conditions for comprehensive
-                          assessment."
+                          assessment.&quot;
                         </p>
                       </div>
                     </div>
@@ -610,7 +610,7 @@ export default function TransformerLesson() {
                     <CardContent className="p-6">
                       <h4 className="font-semibold text-green-900 mb-3">Positional Encoding</h4>
                       <p className="text-green-800 text-sm mb-3">
-                        Since there's no recurrence, we inject position information using sinusoidal functions.
+                        Since there&apos;s no recurrence, we inject position information using sinusoidal functions.
                       </p>
                       <div className="bg-green-50 p-3 rounded font-mono text-sm">
                         PE(pos,2i) = sin(pos/10000^(2i/d))
@@ -862,7 +862,7 @@ export default function TransformerLesson() {
                       </p>
                       <div className="bg-green-50 p-3 rounded-lg">
                         <div className="text-xs font-medium text-green-700 mb-1">Example Query:</div>
-                        <div className="text-xs text-green-600">"Explain how to calculate WACC for a tech startup"</div>
+                        <div className="text-xs text-green-600">&quot;Explain how to calculate WACC for a tech startup&quot;</div>
                       </div>
                     </CardContent>
                   </Card>
@@ -932,18 +932,18 @@ export default function TransformerLesson() {
                           <div className="font-semibold text-sm">Sarah Chen - Investment Banking</div>
                           <div className="text-xs text-gray-600 mb-2">Used AI tutor for DCF modeling</div>
                           <div className="text-xs text-green-600">
-                            "The AI explanations were clearer than my textbook"
+                            &quot;The AI explanations were clearer than my textbook&quot;
                           </div>
                         </div>
                         <div className="bg-gray-50 p-4 rounded-lg">
                           <div className="font-semibold text-sm">Michael Rodriguez - Strategy Consulting</div>
                           <div className="text-xs text-gray-600 mb-2">Practiced case interviews with AI</div>
-                          <div className="text-xs text-green-600">"Landed McKinsey offer after AI-powered prep"</div>
+                          <div className="text-xs text-green-600">&quot;Landed McKinsey offer after AI-powered prep&quot;</div>
                         </div>
                         <div className="bg-gray-50 p-4 rounded-lg">
                           <div className="font-semibold text-sm">Emily Johnson - Product Management</div>
                           <div className="text-xs text-gray-600 mb-2">Learned strategic frameworks</div>
-                          <div className="text-xs text-green-600">"AI helped me think like a business leader"</div>
+                          <div className="text-xs text-green-600">&quot;AI helped me think like a business leader&quot;</div>
                         </div>
                       </div>
                     </CardContent>
@@ -1006,8 +1006,8 @@ export default function TransformerLesson() {
               </div>
               <h3 className="text-2xl font-bold text-green-900 mb-4">Congratulations!</h3>
               <p className="text-green-800 mb-6">
-                You've completed the Transformer Architecture lesson. You now understand the revolutionary "Attention Is
-                All You Need" paper and how it powers modern AI in business education.
+                You&apos;ve completed the Transformer Architecture lesson. You now understand the revolutionary &quot;Attention Is
+                All You Need&quot; paper and how it powers modern AI in business education.
               </p>
               <div className="flex justify-center space-x-4">
                 <Button className="bg-green-600 hover:bg-green-700">

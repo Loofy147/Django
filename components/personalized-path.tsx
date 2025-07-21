@@ -285,7 +285,7 @@ export default function PersonalizedPath({ userLevel }: PersonalizedPathProps) {
                         <div>
                           <h5 className="font-semibold text-blue-900">Continue Your Progress</h5>
                           <p className="text-sm text-blue-700">
-                            You're{" "}
+                            You&apos;re{" "}
                             {Math.round(
                               (module.lessons.filter((l) => l.completed).length / module.lessons.length) * 100,
                             )}

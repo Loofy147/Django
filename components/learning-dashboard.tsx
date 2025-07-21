@@ -101,14 +101,14 @@ export default function LearningDashboard({ stats, featuredContent }: LearningDa
         ))}
       </div>
 
-      {/* Today's Learning Plan */}
+      {/* Today&apos;s Learning Plan */}
       <Card>
         <CardHeader>
           <div className="flex items-center justify-between">
             <div>
               <CardTitle className="flex items-center">
                 <Calendar className="h-5 w-5 mr-2" />
-                Today's Learning Plan
+                Today&apos;s Learning Plan
               </CardTitle>
               <CardDescription>Optimized for 45 minutes of focused learning</CardDescription>
             </div>
@@ -288,7 +288,7 @@ export default function LearningDashboard({ stats, featuredContent }: LearningDa
               </div>
               <Progress value={78} className="h-3" />
               <p className="text-sm text-gray-600">
-                You're learning 23% faster than your average. Keep up the momentum!
+                You&apos;re learning 23% faster than your average. Keep up the momentum!
               </p>
             </div>
           </CardContent>
