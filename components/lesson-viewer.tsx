@@ -34,11 +34,11 @@ export default function LessonViewer({ lessonId, onBack }: LessonViewerProps) {
   let currentLesson: any = null
   let currentModule: any = null
 
-  for (const module of businessCurriculum.modules) {
-    const lesson = module.lessons.find((l) => l.id === lessonId)
+  for (const mod of businessCurriculum.modules) {
+    const lesson = mod.lessons.find((l) => l.id === lessonId)
     if (lesson) {
       currentLesson = lesson
-      currentModule = module
+      currentModule = mod
       break
     }
   }
@@ -142,7 +142,7 @@ export default function LessonViewer({ lessonId, onBack }: LessonViewerProps) {
                 <CardHeader>
                   <CardTitle className="flex items-center">
                     <Target className="h-5 w-5 mr-2" />
-                    What You'll Learn
+                    What You&apos;ll Learn
                   </CardTitle>
                 </CardHeader>
                 <CardContent>
@@ -331,7 +331,7 @@ export default function LessonViewer({ lessonId, onBack }: LessonViewerProps) {
 
                     {currentLesson.content.tools && (
                       <div>
-                        <h4 className="font-semibold mb-2">Tools You'll Use:</h4>
+                        <h4 className="font-semibold mb-2">Tools You&apos;ll Use:</h4>
                         <div className="flex flex-wrap gap-2">
                           {currentLesson.content.tools.map((tool: string, index: number) => (
                             <Badge key={index} variant="outline">
@@ -345,7 +345,7 @@ export default function LessonViewer({ lessonId, onBack }: LessonViewerProps) {
                     <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-4">
                       <h4 className="font-semibold text-yellow-800 mb-2">💡 Pro Tip</h4>
                       <p className="text-yellow-700">
-                        This exercise mirrors real-world scenarios you'll encounter in your career. Take your time and
+                        This exercise mirrors real-world scenarios you&apos;ll encounter in your career. Take your time and
                         focus on understanding the underlying principles.
                       </p>
                     </div>
@@ -479,15 +479,15 @@ export default function LessonViewer({ lessonId, onBack }: LessonViewerProps) {
                       <ul className="space-y-2">
                         <li className="flex items-center space-x-2">
                           <BookOpen className="h-4 w-4 text-blue-500" />
-                          <span>"Valuation: Measuring and Managing the Value of Companies" by McKinsey</span>
+                          <span>&quot;Valuation: Measuring and Managing the Value of Companies&quot; by McKinsey</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <BookOpen className="h-4 w-4 text-blue-500" />
-                          <span>"Investment Banking: Valuation, Leveraged Buyouts, and Mergers" by Rosenbaum</span>
+                          <span>&quot;Investment Banking: Valuation, Leveraged Buyouts, and Mergers&quot; by Rosenbaum</span>
                         </li>
                         <li className="flex items-center space-x-2">
                           <BookOpen className="h-4 w-4 text-blue-500" />
-                          <span>"Financial Statement Analysis and Security Valuation" by Penman</span>
+                          <span>&quot;Financial Statement Analysis and Security Valuation&quot; by Penman</span>
                         </li>
                       </ul>
                     </div>

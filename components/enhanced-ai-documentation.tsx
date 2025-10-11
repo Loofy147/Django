@@ -405,7 +405,7 @@ export default function EnhancedAIDocumentation() {
             <CardHeader className="bg-gradient-to-r from-blue-50 to-indigo-50">
               <CardTitle className="flex items-center text-2xl">
                 <Eye className="h-6 w-6 mr-3" />
-                "Attention Is All You Need" - Transformer Architecture
+                &quot;Attention Is All You Need&quot; - Transformer Architecture
               </CardTitle>
               <CardDescription className="text-lg">
                 Revolutionary paper by Vaswani et al. (2017) that introduced the Transformer architecture

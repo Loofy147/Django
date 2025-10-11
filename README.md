@@ -28,3 +28,13 @@ Continue building your app on:
 2. Deploy your chats from the v0 interface
 3. Changes are automatically pushed to this repository
 4. Vercel deploys the latest version from this repository
+
+## CI/CD Pipeline
+
+This project uses a Jenkins pipeline for continuous integration and deployment. The pipeline is defined in the `Jenkinsfile` and includes the following stages:
+
+*   **Build**: Installs dependencies and builds the project.
+*   **Test**: Runs the test suite.
+*   **Lint**: Lints the codebase to ensure code quality.
+
+To use the pipeline, you will need to have Jenkins installed and configured to connect to this repository.

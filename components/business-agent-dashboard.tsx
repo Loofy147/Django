@@ -487,7 +487,7 @@ export default function BusinessAgentDashboard() {
               </Badge>
             </div>
             <div className="flex items-center justify-between p-2 bg-blue-50 rounded">
-              <span className="text-sm">Added Case Study: Tesla's Market Strategy</span>
+              <span className="text-sm">Added Case Study: Tesla&apos;s Market Strategy</span>
               <Badge variant="outline" className="text-xs">
                 5 min ago
               </Badge>
