@@ -112,6 +112,15 @@ const trainingData = [
   },
 ]
 
+/**
+ * Renders the AI Documentation page.
+ * This component provides a comprehensive overview of the AI functionalities
+ * integrated into the business education platform. It features a multi-tab
+ * interface that covers AI concepts, model training processes, implementation
+ * guides, and an API reference. The component manages its own state to handle
+ * tab navigation and the display of detailed concept views.
+ * @returns {JSX.Element} The rendered AI documentation component.
+ */
 export default function AIDocumentation() {
   const [selectedConcept, setSelectedConcept] = useState<string | null>(null)
   const [activeTab, setActiveTab] = useState("concepts")

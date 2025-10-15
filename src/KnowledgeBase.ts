@@ -3,15 +3,27 @@
 import type { KnowledgeItem, BusinessEducationContext } from "./types"
 import { generateId, formatBusinessContent } from "./utils"
 
+/**
+ * A knowledge base specialized in storing and managing business education content.
+ * It supports categorization, contextual metadata, and personalized content retrieval.
+ */
 export class BusinessKnowledgeBase {
   private memory: Map<string, KnowledgeItem> = new Map()
   private businessIndex: Map<string, string[]> = new Map() // topic -> item IDs
 
+  /**
+   * Creates an instance of the BusinessKnowledgeBase.
+   * @param storageDir - The directory for storing knowledge base data.
+   */
   constructor(private storageDir = "./business_kb_storage") {
     // Initialize business education categories
     this.initializeBusinessCategories()
   }
 
+  /**
+   * Initializes the business categories in the knowledge base.
+   * @private
+   */
   private initializeBusinessCategories() {
     const categories = [
       "financial-analysis",
@@ -29,7 +41,12 @@ export class BusinessKnowledgeBase {
   }
 
   /**
-   * Add business education content with automatic categorization
+   * Adds business education content to the knowledge base.
+   * @param content - The content to add.
+   * @param category - The category of the content.
+   * @param context - The educational context for the content.
+   * @param metadata - Optional metadata for the content.
+   * @returns A promise that resolves to the added knowledge item.
    */
   async addBusinessContent(
     content: string,
@@ -66,7 +83,14 @@ export class BusinessKnowledgeBase {
   }
 
   /**
-   * Add case study with structured metadata
+   * Adds a case study to the knowledge base.
+   * @param title - The title of the case study.
+   * @param content - The content of the case study.
+   * @param company - The company featured in the case study.
+   * @param industry - The industry of the company.
+   * @param learningObjectives - The learning objectives of the case study.
+   * @param context - The educational context for the case study.
+   * @returns A promise that resolves to the added knowledge item.
    */
   async addCaseStudy(
     title: string,
@@ -94,7 +118,11 @@ ${content}
   }
 
   /**
-   * Search by business category and difficulty level
+   * Searches the knowledge base by business criteria.
+   * @param category - The category to search for.
+   * @param difficulty - The difficulty level to search for.
+   * @param focusArea - The focus area to search for.
+   * @returns An array of knowledge items that match the criteria.
    */
   searchByBusinessCriteria(category?: string, difficulty?: string, focusArea?: string): KnowledgeItem[] {
     let items = Array.from(this.memory.values())
@@ -116,7 +144,9 @@ ${content}
   }
 
   /**
-   * Get personalized content recommendations
+   * Gets personalized content recommendations for a user.
+   * @param context - The educational context for the recommendations.
+   * @returns An array of recommended knowledge items.
    */
   getPersonalizedContent(context: BusinessEducationContext): KnowledgeItem[] {
     return this.searchByBusinessCriteria(
@@ -127,14 +157,16 @@ ${content}
   }
 
   /**
-   * List all items in the KB.
+   * Lists all items in the knowledge base.
+   * @returns An array of all knowledge items.
    */
   listAll(): KnowledgeItem[] {
     return Array.from(this.memory.values())
   }
 
   /**
-   * Get business analytics
+   * Gets analytics about the business content in the knowledge base.
+   * @returns An object containing business analytics.
    */
   getBusinessAnalytics() {
     const totalItems = this.memory.size

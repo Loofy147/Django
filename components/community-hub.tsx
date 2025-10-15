@@ -155,6 +155,14 @@ const mentorshipMatches = [
   },
 ]
 
+/**
+ * Renders the Community Hub page.
+ * This component serves as a central platform for user interaction and collaboration.
+ * It features sections for trending discussions, study groups, live events,
+ * and mentorship matching, fostering a vibrant learning community.
+ * The component is data-driven and designed to be visually engaging.
+ * @returns {JSX.Element} The rendered community hub component.
+ */
 export default function CommunityHub() {
   return (
     <div className="space-y-8">

@@ -113,6 +113,14 @@ const jobOpportunities = [
   },
 ]
 
+/**
+ * Renders the Career Guidance page.
+ * This component provides personalized career guidance based on user assessments.
+ * It displays recommended career paths, connects users with mentors,
+ * and lists relevant job opportunities. The component is designed to be
+ * data-driven, presenting information in a clear and actionable format.
+ * @returns {JSX.Element} The rendered career guidance component.
+ */
 export default function CareerGuidance() {
   return (
     <div className="space-y-8">

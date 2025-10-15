@@ -11,6 +11,14 @@ export const metadata: Metadata = {
     generator: 'v0.dev'
 }
 
+/**
+ * The root layout for the application.
+ * This component sets up the basic HTML structure, including the `<html>` and `<body>` tags,
+ * and applies the Inter font to the entire application.
+ * @param {object} props - The props for the component.
+ * @param {React.ReactNode} props.children - The child components to be rendered within the layout.
+ * @returns {JSX.Element} The rendered root layout component.
+ */
 export default function RootLayout({
   children,
 }: {

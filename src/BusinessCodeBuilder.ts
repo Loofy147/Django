@@ -5,14 +5,26 @@
 import type { LLMProviderConfig, CodeBuildResult } from "./types"
 import { generateId } from "./utils"
 
+/**
+ * A builder class for generating business-related code, such as analysis tools and simulations.
+ * This class uses a Large Language Model (LLM) to generate code based on provided requirements.
+ */
 export class BusinessCodeBuilder {
+  /**
+   * Creates an instance of the BusinessCodeBuilder.
+   * @param config - The configuration for the Large Language Model provider.
+   * @param workDir - The working directory for the generated code.
+   */
   constructor(
     private config: LLMProviderConfig,
     private workDir = "./business_workspace",
   ) {}
 
   /**
-   * Generate business analysis tools and calculators
+   * Generates business analysis tools and calculators.
+   * @param toolType - The type of business tool to generate.
+   * @param requirements - The requirements for the tool.
+   * @returns A promise that resolves to the code build result.
    */
   async generateBusinessTool(
     toolType: "financial-calculator" | "strategy-framework" | "dashboard" | "analysis-template",
@@ -30,7 +42,10 @@ export class BusinessCodeBuilder {
   }
 
   /**
-   * Generate interactive business simulations
+   * Generates interactive business simulations.
+   * @param scenario - The scenario for the simulation.
+   * @param complexity - The complexity level of the simulation.
+   * @returns A promise that resolves to the code build result.
    */
   async generateBusinessSimulation(
     scenario: string,
@@ -54,6 +69,13 @@ export class BusinessCodeBuilder {
     }
   }
 
+  /**
+   * Creates a prompt for generating a business tool.
+   * @param toolType - The type of business tool.
+   * @param requirements - The requirements for the tool.
+   * @returns The generated prompt.
+   * @private
+   */
   private createBusinessToolPrompt(toolType: string, requirements: string): string {
     return `Generate a ${toolType} for business education with the following requirements:
     ${requirements}
@@ -66,6 +88,13 @@ export class BusinessCodeBuilder {
     `
   }
 
+  /**
+   * Simulates the generation of code for a business tool.
+   * @param toolType - The type of business tool.
+   * @param requirements - The requirements for the tool.
+   * @returns A promise that resolves to a record of generated file paths and their content.
+   * @private
+   */
   private async simulateCodeGeneration(toolType: string, requirements: string): Promise<Record<string, string>> {
     // Simulate file generation based on tool type
     const files: Record<string, string> = {}
@@ -89,6 +118,13 @@ export class BusinessCodeBuilder {
     return files
   }
 
+  /**
+   * Generates files for a business simulation.
+   * @param scenario - The scenario for the simulation.
+   * @param complexity - The complexity level of the simulation.
+   * @returns A promise that resolves to a record of generated file paths and their content.
+   * @private
+   */
   private async generateSimulationFiles(scenario: string, complexity: string): Promise<Record<string, string>> {
     return {
       [`${generateId()}_simulation-${scenario.toLowerCase().replace(/\s+/g, "-")}.tsx`]: `
@@ -174,6 +210,11 @@ export default function BusinessSimulation() {
     }
   }
 
+  /**
+   * Generates the content for a financial calculator component.
+   * @returns The generated code for the financial calculator.
+   * @private
+   */
   private generateFinancialCalculator(): string {
     return `
 // Financial Calculator Component
@@ -236,6 +277,11 @@ export default function FinancialCalculator() {
     `
   }
 
+  /**
+   * Generates the content for a financial utilities module.
+   * @returns The generated code for the financial utilities.
+   * @private
+   */
   private generateFinancialUtils(): string {
     return `
 // Financial Utilities
@@ -264,6 +310,11 @@ export class FinancialCalculations {
     `
   }
 
+  /**
+   * Generates the content for a strategy framework component.
+   * @returns The generated code for the strategy framework.
+   * @private
+   */
   private generateStrategyFramework(): string {
     return `
 // Strategy Framework Component
@@ -309,6 +360,11 @@ export default function StrategyFramework() {
     `
   }
 
+  /**
+   * Generates the content for a business dashboard component.
+   * @returns The generated code for the business dashboard.
+   * @private
+   */
   private generateBusinessDashboard(): string {
     return `
 // Business Dashboard Component
@@ -347,6 +403,11 @@ export default function BusinessDashboard() {
     `
   }
 
+  /**
+   * Generates the content for a business analysis template component.
+   * @returns The generated code for the business analysis template.
+   * @private
+   */
   private generateAnalysisTemplate(): string {
     return `
 // Business Analysis Template

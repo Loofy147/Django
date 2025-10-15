@@ -11,6 +11,11 @@ import type {
   BusinessEducationContext,
 } from "./types"
 
+/**
+ * Represents an AI agent specialized in business education.
+ * This agent can learn business concepts, add case studies, generate personalized summaries,
+ * and create interactive business tools and simulations.
+ */
 export class BusinessEducationAgent {
   private kb: BusinessKnowledgeBase
   private summarizer: BusinessSummarizer
@@ -22,6 +27,10 @@ export class BusinessEducationAgent {
     result: any
   }> = []
 
+  /**
+   * Creates an instance of the BusinessEducationAgent.
+   * @param llmConfig - The configuration for the Large Language Model provider.
+   */
   constructor(llmConfig: LLMProviderConfig) {
     this.kb = new BusinessKnowledgeBase()
     this.summarizer = new BusinessSummarizer(llmConfig)
@@ -29,7 +38,12 @@ export class BusinessEducationAgent {
   }
 
   /**
-   * Learn from business content with educational context
+   * Learns from business content within a specific educational context.
+   * @param content - The business content to learn.
+   * @param category - The category of the business content.
+   * @param context - The educational context for learning.
+   * @param metadata - Optional metadata for the content.
+   * @returns A promise that resolves to the learned knowledge item.
    */
   async learnBusinessConcept(
     content: string,
@@ -51,7 +65,14 @@ export class BusinessEducationAgent {
   }
 
   /**
-   * Add a business case study
+   * Adds a business case study to the knowledge base.
+   * @param title - The title of the case study.
+   * @param content - The content of the case study.
+   * @param company - The company featured in the case study.
+   * @param industry - The industry of the company.
+   * @param learningObjectives - The learning objectives of the case study.
+   * @param context - The educational context for the case study.
+   * @returns A promise that resolves to the added knowledge item.
    */
   async addCaseStudy(
     title: string,
@@ -75,7 +96,9 @@ export class BusinessEducationAgent {
   }
 
   /**
-   * Generate personalized learning summary
+   * Generates a personalized learning summary based on the user's educational context.
+   * @param context - The educational context for the summary.
+   * @returns A promise that resolves to the personalized summarization result.
    */
   async generatePersonalizedSummary(context: BusinessEducationContext): Promise<SummarizationResult> {
     const relevantContent = this.kb.getPersonalizedContent(context)
@@ -93,7 +116,11 @@ export class BusinessEducationAgent {
   }
 
   /**
-   * Create interactive business tool
+   * Creates an interactive business tool.
+   * @param toolType - The type of business tool to create.
+   * @param requirements - The requirements for the business tool.
+   * @param context - The educational context for the tool.
+   * @returns A promise that resolves to the code build result.
    */
   async createBusinessTool(
     toolType: "financial-calculator" | "strategy-framework" | "dashboard" | "analysis-template",
@@ -114,7 +141,11 @@ export class BusinessEducationAgent {
   }
 
   /**
-   * Generate business simulation
+   * Creates a business simulation.
+   * @param scenario - The scenario for the business simulation.
+   * @param complexity - The complexity level of the simulation.
+   * @param context - The educational context for the simulation.
+   * @returns A promise that resolves to the code build result.
    */
   async createBusinessSimulation(
     scenario: string,
@@ -135,7 +166,9 @@ export class BusinessEducationAgent {
   }
 
   /**
-   * Get learning analytics and recommendations
+   * Gets learning analytics and recommendations for the user.
+   * @param context - The educational context for the analytics.
+   * @returns An object containing learning analytics and recommendations.
    */
   getLearningAnalytics(context: BusinessEducationContext) {
     const kbAnalytics = this.kb.getBusinessAnalytics()
@@ -157,6 +190,13 @@ export class BusinessEducationAgent {
     }
   }
 
+  /**
+   * Generates recommendations based on the user's learning history and context.
+   * @param context - The educational context.
+   * @param history - The user's learning history.
+   * @returns An array of string recommendations.
+   * @private
+   */
   private generateRecommendations(context: BusinessEducationContext, history: any[]): string[] {
     const recommendations = []
 
@@ -189,7 +229,8 @@ export class BusinessEducationAgent {
   }
 
   /**
-   * Export learning progress
+   * Exports the user's learning progress.
+   * @returns An object containing the exported learning progress.
    */
   exportLearningProgress(): any {
     return {

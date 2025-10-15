@@ -25,6 +25,15 @@ import {
   Users,
 } from "lucide-react"
 
+/**
+ * Renders the Transformer Architecture lesson page.
+ * This component provides an interactive and in-depth lesson on the Transformer
+ * architecture, famously introduced in the "Attention Is All You Need" paper.
+ * It includes a step-by-step learning path, detailed explanations of attention
+ * mechanisms, and the overall encoder-decoder structure, tailored for a business
+ * education context.
+ * @returns {JSX.Element} The rendered Transformer lesson component.
+ */
 export default function TransformerLesson() {
   const [currentStep, setCurrentStep] = useState(0)
   const [completedSteps, setCompletedSteps] = useState<number[]>([])

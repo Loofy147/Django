@@ -12,6 +12,14 @@ import { Badge } from "@/components/ui/badge"
 import { Progress } from "@/components/ui/progress"
 import { Brain, BookOpen, Code, BarChart3, Users, Lightbulb, Target, TrendingUp } from "lucide-react"
 
+/**
+ * Renders the Business Agent Dashboard.
+ * This component provides a user interface for interacting with the Business Education Agent.
+ * It displays agent status, key metrics, and provides controls for adding content,
+ * generating tools, and creating simulations. The component manages its own state
+ * for agent status, content, and tool requests.
+ * @returns {JSX.Element} The rendered business agent dashboard component.
+ */
 export default function BusinessAgentDashboard() {
   const [agentStatus, setAgentStatus] = useState("ready")
   const [learningProgress, setLearningProgress] = useState(0)

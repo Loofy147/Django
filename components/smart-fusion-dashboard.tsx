@@ -53,6 +53,14 @@ interface FusionEvent {
   impact: "low" | "medium" | "high" | "critical"
 }
 
+/**
+ * Renders the Smart Fusion Dashboard.
+ * This component provides a comprehensive a dashboard for monitoring and managing
+ * the self-evolving business education platform. It displays real-time system metrics,
+ * fusion events, version control information, and safety protocols. The component
+ * allows for the control of the evolution engine and manual system actions.
+ * @returns {JSX.Element} The rendered smart fusion dashboard component.
+ */
 export default function SmartFusionDashboard() {
   const [metrics, setMetrics] = useState<SystemMetrics>({
     coreVersion: "2.1.3",

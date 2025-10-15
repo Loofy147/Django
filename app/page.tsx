@@ -3,6 +3,14 @@ import { Card, CardContent, CardDescription, CardFooter, CardHeader, CardTitle }
 import Image from "next/image";
 import Link from "next/link";
 
+/**
+ * Renders the Home Page of the Business Logic Academy.
+ * This component serves as the main landing page, showcasing the platform's
+ * features, learning phases, and expert analysis. It is designed to be
+ * visually engaging and informative, encouraging users to start their
+ * learning journey.
+ * @returns {JSX.Element} The rendered home page component.
+ */
 export default function HomePage() {
   return (
     <div className="flex flex-col min-h-screen">

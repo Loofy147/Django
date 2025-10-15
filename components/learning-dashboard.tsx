@@ -45,6 +45,17 @@ interface LearningDashboardProps {
   }>
 }
 
+/**
+ * Renders the Learning Dashboard.
+ * This component provides a personalized overview of the user's learning journey.
+ * It displays key statistics, AI-powered recommendations, a daily learning plan,
+ * and featured content. The component is designed to be visually engaging and
+ * data-driven, motivating the user to continue their learning.
+ * @param {LearningDashboardProps} props - The props for the component.
+ * @param {object} props.stats - An object containing user learning statistics.
+ * @param {Array<object>} props.featuredContent - An array of featured content items.
+ * @returns {JSX.Element} The rendered learning dashboard component.
+ */
 export default function LearningDashboard({ stats, featuredContent }: LearningDashboardProps) {
   return (
     <div className="space-y-8">
