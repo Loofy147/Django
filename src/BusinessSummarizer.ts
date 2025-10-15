@@ -2,11 +2,23 @@
 
 import type { KnowledgeItem, SummarizationResult, LLMProviderConfig, BusinessEducationContext } from "./types"
 
+/**
+ * A class for summarizing business content with an educational focus.
+ * It uses a Large Language Model (LLM) to generate summaries tailored to specific learning contexts.
+ */
 export class BusinessSummarizer {
+  /**
+   * Creates an instance of the BusinessSummarizer.
+   * @param config - The configuration for the Large Language Model provider.
+   */
   constructor(private config: LLMProviderConfig) {}
 
   /**
-   * Summarize business content with educational focus
+   * Summarizes business content with an educational focus.
+   * @param items - The knowledge items to summarize.
+   * @param context - The educational context for the summary.
+   * @param maxTokens - The maximum number of tokens for the summary.
+   * @returns A promise that resolves to the summarization result.
    */
   async summarizeForEducation(
     items: KnowledgeItem[],
@@ -42,7 +54,9 @@ Summary:`
   }
 
   /**
-   * Create executive summary for business cases
+   * Creates an executive summary for business case studies.
+   * @param caseStudyItems - The case study items to summarize.
+   * @returns A promise that resolves to the executive summary.
    */
   async createExecutiveSummary(caseStudyItems: KnowledgeItem[]): Promise<string> {
     const combined = caseStudyItems.map((i) => i.content).join("\n\n")
@@ -61,6 +75,13 @@ Executive Summary:`
     return this.callLLM(prompt, 800)
   }
 
+  /**
+   * Calls the Large Language Model to generate a summary.
+   * @param prompt - The prompt to send to the LLM.
+   * @param maxTokens - The maximum number of tokens for the response.
+   * @returns A promise that resolves to the LLM's response.
+   * @private
+   */
   private async callLLM(prompt: string, maxTokens: number): Promise<string> {
     // Simulate LLM response for demo
     // In production, replace with actual OpenAI/LLM API call

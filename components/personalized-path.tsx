@@ -119,6 +119,15 @@ const contentTypes = {
   "case-study": { icon: BarChart3, color: "text-orange-500", bg: "bg-orange-50" },
 }
 
+/**
+ * Renders the Personalized Learning Path page.
+ * This component displays a tailored learning path based on the user's level.
+ * It shows a series of modules, each containing lessons of various types.
+ * The component allows users to expand modules to view lessons and track their progress.
+ * @param {PersonalizedPathProps} props - The props for the component.
+ * @param {string} props.userLevel - The user's current learning level (e.g., "Beginner", "Intermediate").
+ * @returns {JSX.Element} The rendered personalized learning path component.
+ */
 export default function PersonalizedPath({ userLevel }: PersonalizedPathProps) {
   const [selectedModule, setSelectedModule] = useState<number | null>(null)
   const currentPath = learningPaths[userLevel as keyof typeof learningPaths]

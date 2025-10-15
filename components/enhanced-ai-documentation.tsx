@@ -159,6 +159,14 @@ const educationalServices = [
   },
 ]
 
+/**
+ * Renders the Enhanced AI Documentation page.
+ * This component provides an in-depth, professional-grade overview of the AI systems,
+ * featuring real training data, performance metrics, and detailed explanations of
+ * the underlying Transformer architecture. It includes a multi-tab interface
+ * for navigating through different aspects of the AI documentation.
+ * @returns {JSX.Element} The rendered enhanced AI documentation component.
+ */
 export default function EnhancedAIDocumentation() {
   const [activeTab, setActiveTab] = useState("overview")
   const [selectedDataset, setSelectedDataset] = useState<number | null>(null)

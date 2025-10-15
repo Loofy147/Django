@@ -26,6 +26,17 @@ interface LessonViewerProps {
   onBack: () => void
 }
 
+/**
+ * Renders the Lesson Viewer page.
+ * This component displays the content of a specific lesson, including an overview,
+ * detailed content, practical exercises, assessments, and additional resources.
+ * It features a tabbed interface for easy navigation and allows users to mark
+ * lessons as complete.
+ * @param {LessonViewerProps} props - The props for the component.
+ * @param {string} props.lessonId - The ID of the lesson to display.
+ * @param {() => void} props.onBack - A callback function to return to the curriculum view.
+ * @returns {JSX.Element} The rendered lesson viewer component.
+ */
 export default function LessonViewer({ lessonId, onBack }: LessonViewerProps) {
   const [activeTab, setActiveTab] = useState("overview")
   const [completed, setCompleted] = useState(false)

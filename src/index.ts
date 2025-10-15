@@ -13,6 +13,11 @@ import { getKnowledgeStats } from "./demo/steps/8-get-knowledge-stats"
 import { getConversationHistory } from "./demo/steps/9-get-conversation-history"
 import { generateSimulation } from "./demo/steps/10-generate-simulation"
 
+/**
+ * The main function that runs the Business Education Agent Framework demo.
+ * This function initializes the agent, configures the LLM provider, and runs a series of demo steps
+ * to showcase the agent's capabilities.
+ */
 async function main() {
   console.log("🚀 BUSINESS EDUCATION AGENT FRAMEWORK DEMO")
   console.log("=".repeat(60))

@@ -3,9 +3,17 @@
 import axios, { type AxiosInstance } from "axios"
 import type { AgentMessage, LLMProviderConfig } from "./types"
 
+/**
+ * Handles communication with remote LLM endpoints, including other agents.
+ * It provides methods for sending messages, broadcasting to multiple endpoints,
+ * and wrapping specific LLM providers like OpenAI.
+ */
 export class Communicator {
   private httpClient: AxiosInstance
 
+  /**
+   * Creates an instance of the Communicator.
+   */
   constructor() {
     this.httpClient = axios.create({
       timeout: 30_000,
@@ -14,9 +22,10 @@ export class Communicator {
   }
 
   /**
-   * Send a message (chat) to a remote LLM endpoint (could be another agent).
-   * Expects the remote service to accept { messages: AgentMessage[] } payload
-   * and return a response in the same shape. Adapt the interface as needed.
+   * Sends a message to a remote LLM endpoint.
+   * @param endpoint - The URL of the remote endpoint.
+   * @param conversation - The conversation history to send.
+   * @returns A promise that resolves to an array of agent messages from the remote endpoint.
    */
   async sendMessage(endpoint: string, conversation: AgentMessage[]): Promise<AgentMessage[]> {
     try {
@@ -33,8 +42,10 @@ export class Communicator {
   }
 
   /**
-   * Helper to wrap an LLM provider (like OpenAI) into the AgentMessage<> format and send.
-   * If you have a custom LLM endpoint, call `sendMessage()` directly.
+   * Sends a message to an OpenAI-compatible endpoint.
+   * @param providerConfig - The configuration for the LLM provider.
+   * @param conversation - The conversation history to send.
+   * @returns A promise that resolves to a single agent message from the AI.
    */
   async sendToOpenAI(providerConfig: LLMProviderConfig, conversation: AgentMessage[]): Promise<AgentMessage> {
     // Convert AgentMessage[] → OpenAI chat format
@@ -58,7 +69,10 @@ export class Communicator {
   }
 
   /**
-   * Generate contextual business responses for demo
+   * Generates a contextual business response for demo purposes.
+   * @param conversation - The conversation history to use for context.
+   * @returns A string containing a simulated business response.
+   * @private
    */
   private generateBusinessResponse(conversation: AgentMessage[]): string {
     const lastMessage = conversation[conversation.length - 1]?.content.toLowerCase() || ""
@@ -146,7 +160,10 @@ Please feel free to ask specific questions about any of these business topics, a
   }
 
   /**
-   * Send message to multiple agents/endpoints in parallel
+   * Sends a message to multiple endpoints in parallel.
+   * @param endpoints - An array of endpoint URLs to send the message to.
+   * @param message - The message to send.
+   * @returns A promise that resolves to a record of endpoint URLs and their corresponding responses.
    */
   async broadcastMessage(endpoints: string[], message: string): Promise<Record<string, AgentMessage[]>> {
     const conversation: AgentMessage[] = [{ role: "agent", content: message, timestamp: new Date() }]

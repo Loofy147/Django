@@ -169,6 +169,14 @@ const realWorldProjects = [
   },
 ]
 
+/**
+ * Renders the Real-World Projects page.
+ * This component showcases a collection of real-world business projects that users can
+ * undertake to apply their skills. It allows users to browse projects, view detailed
+ * information about each project, and track their progress. The component manages
+ * its own state for project selection and tab navigation.
+ * @returns {JSX.Element} The rendered real-world projects component.
+ */
 export default function RealWorldProjects() {
   const [selectedProject, setSelectedProject] = useState<string | null>(null)
   const [activeTab, setActiveTab] = useState('overview')

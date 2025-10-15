@@ -77,6 +77,14 @@ const skillAreas = [
   { name: "Marketing", weight: 0.15, questions: [5] },
 ]
 
+/**
+ * Renders the Skill Assessment page.
+ * This component provides an interactive quiz to assess the user's business skills
+ * across various domains. It guides the user through a series of questions,
+ * calculates the results, and displays a detailed breakdown of their performance
+ * with personalized recommendations.
+ * @returns {JSX.Element} The rendered skill assessment component.
+ */
 export default function SkillAssessment() {
   const [currentQuestion, setCurrentQuestion] = useState(0)
   const [answers, setAnswers] = useState<{ [key: number]: number }>({})

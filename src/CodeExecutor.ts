@@ -4,10 +4,16 @@ import { spawn } from "child_process"
 import * as fs from "fs/promises"
 import type { CodeTestResult } from "./types"
 
+/**
+ * A class for executing code, including Node.js scripts, Jest tests, and TypeScript code.
+ * It captures the output and returns a standardized test result.
+ */
 export class CodeExecutor {
   /**
-   * Run a Node.js script located at `scriptPath`.
-   * Captures stdout/stderr and returns test results.
+   * Runs a Node.js script.
+   * @param scriptPath - The path to the Node.js script to run.
+   * @param args - Optional arguments to pass to the script.
+   * @returns A promise that resolves to the code test result.
    */
   async runNodeScript(scriptPath: string, args: string[] = []): Promise<CodeTestResult> {
     return new Promise<CodeTestResult>((resolve) => {
@@ -39,9 +45,8 @@ export class CodeExecutor {
   }
 
   /**
-   * Basic "test" runner that looks for a file ending in `.test.js` or `.test.ts`,
-   * uses Jest if available in the environment. Returns a summary.
-   * (Assumes `jest` is installed in the project.)
+   * Runs Jest tests in the workspace.
+   * @returns A promise that resolves to the code test result.
    */
   async runJestTests(): Promise<CodeTestResult> {
     return new Promise((resolve) => {
@@ -69,7 +74,10 @@ export class CodeExecutor {
   }
 
   /**
-   * Execute TypeScript code by compiling it first
+   * Executes TypeScript code by compiling it first.
+   * @param tsCode - The TypeScript code to execute.
+   * @param filename - The temporary filename for the TypeScript code.
+   * @returns A promise that resolves to the code test result.
    */
   async runTypeScriptCode(tsCode: string, filename = "temp.ts"): Promise<CodeTestResult> {
     try {
@@ -104,7 +112,9 @@ export class CodeExecutor {
   }
 
   /**
-   * Validate business calculation code
+   * Validates business calculation code by running it with tests.
+   * @param code - The business calculation code to validate.
+   * @returns A promise that resolves to the code test result.
    */
   async validateBusinessCalculations(code: string): Promise<CodeTestResult> {
     const testCode = `
@@ -136,7 +146,9 @@ try {
   }
 
   /**
-   * Run business simulation code
+   * Runs business simulation code.
+   * @param simulationCode - The business simulation code to run.
+   * @returns A promise that resolves to the code test result.
    */
   async runBusinessSimulation(simulationCode: string): Promise<CodeTestResult> {
     const wrappedCode = `
